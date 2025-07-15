@@ -7,7 +7,7 @@
     <h3 class="mb-4">📋 Task Manager</h3>
 
     <!-- Add Task Form -->
-    <form method="POST" action="{{ url_for('add_task') }}" class="row g-3 mb-4 p-3 bg-light border rounded">
+    <form method="POST" action="{{ url_for('add_task_route') }}" class="row g-3 mb-4 p-3 bg-light border rounded">
         <div class="col-md-6">
             <input type="text" name="title" placeholder="Enter Task Title" class="form-control" required>
         </div>
@@ -52,7 +52,7 @@
                     <td>
                         <div class="btn-group">
                             <button type="submit" class="btn btn-primary btn-sm">Update</button>
-                            <a href="{{ url_for('delete_task', task_id=task.id) }}" class="btn btn-danger btn-sm">Delete</a>
+                           <a href="{{ url_for('delete_task_route', task_id=task.id) }}" class="btn btn-danger btn-sm">Delete</a>
                         </div>
                     </td>
                 </form>

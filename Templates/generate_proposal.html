@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}Generate Proposal | UpWork AMS{% endblock %}
+
+{% block main_content %}
+<div class="container">
+    <h3 class="mb-4">🧠 AI Proposal Generator</h3>
+
+    <form method="POST" action="{{ url_for('generate_proposal') }}">
+        <div class="mb-3">
+            <label class="form-label">Job Title</label>
+            <input type="text" name="title" class="form-control" placeholder="e.g. Need a data analyst..." required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Job Description</label>
+            <textarea name="description" class="form-control" rows="7" placeholder="Paste job description..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Generate Proposal</button>
+    </form>
+
+    {% if proposal %}
+        <hr>
+        <h5>📝 Generated Proposal:</h5>
+        <pre style="background:#f8f9fa; padding:1rem; border-radius:5px;">{{ proposal }}</pre>
+    {% endif %}
+</div>
+{% endblock %}
